@@ -1,12 +1,11 @@
 html, body {
-  height: 100%;
+padding: 0;
   margin: 0;
 }
 
 body {
   font-family: sans-serif;
   overflow: hidden;
-
   background: url("5.png") center / cover no-repeat;
 }
 /* center everything */

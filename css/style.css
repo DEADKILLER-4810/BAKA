@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container{
+    position: relative;
+}
+.btn-container{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 30px;
+    display: flex;
+}
+
+.btn{
+    background-color: rgb(126, 6, 6);
+    border: none;
+    padding: 20px 30px;
+    color: white;
+    border-radius: 40px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: "Bitcount Prop Double", system-ui;
+}

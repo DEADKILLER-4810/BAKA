@@ -1,0 +1,135 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  overflow: hidden;
+
+  background: url("../assets/5.png") center / cover no-repeat;
+}
+/* center everything */
+.container-main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+
+.after-img {
+  width: 105%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* envelope container */
+.container  {
+  position: relative;
+  width: 300px;
+  height: 200px; /* 🔥 match your image ratio */
+  cursor: pointer;
+  z-index: 100;
+}
+
+.button{  
+  position: absolute;
+  top: 87%;
+  left: 50%; 
+  text-decoration: none;
+  font-family: "Bitcount Prop Double", system-ui;
+  color: white;
+  background-color: rgb(126, 6, 6);
+  padding: 8px 16px;
+border-radius: 50px;
+}
+
+.content{
+  position: relative;
+}
+.box{
+  position: absolute;
+  top: 40%;
+  left: 40px;
+  background-color: #E4CABD;
+  z-index: 1000;
+  height: 100px;
+  width: 170px;
+  font-family: "Bitcount Prop Double", system-ui;
+}
+
+/* stacked images */
+.img1 {
+  position: absolute;
+  inset: 0; /* top:0 left:0 right:0 bottom:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+/* default visible */
+.closed {
+  opacity: 1;
+  z-index: 3;
+}
+
+.half {
+  z-index: 2;
+}
+
+.open {
+  z-index: 1;
+}
+
+/* step 1 */
+.container.open .closed {
+  opacity: 0;
+}
+
+.container.open .half {
+  opacity: 1;
+}
+
+/* step 2 */
+.container.step2 .half {
+  opacity: 0;
+}
+
+.container.step2 .open {
+  opacity: 1;
+}
+
+/* step 3 zoom */
+.container.step3 .open {
+  transform: scale(4);
+  z-index: 5;
+}
+
+/* hidden content */
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* show content */
+.container.step3 ~ .content {
+  opacity: 1;
+}

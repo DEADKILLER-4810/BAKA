@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Envelope Open</title>
+
+<link rel="stylesheet" href="/css/Page-1.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container-main" >
+    
+  <div class="container" onclick="openEnvelope()" >
+    <img src="/assets/closed.webp" class="img1 closed" />
+    <img src="/assets/opening.png" class="img1 half" />
+    <img src="/assets/opened.png" class="img1 open" />
+  </div>
+
+  <!-- This is your "next page" -->
+  <div class="content">
+        <img class="after-img" src="/assets/6.png" alt="">
+        <div class="box" onclick="reveal()">CLICK</div>
+        <a href="/html/page-3.html" class="button" onclick="revealBtn()">NEXT</a>
+  </div>
+
+</div>
+
+<script>
+function openEnvelope() {
+  console.log("clicked"); // 👈 add this
+  const container = document.querySelector(".container");
+
+  container.classList.add("open");
+
+  setTimeout(() => {
+    container.classList.add("step2");
+  }, 300);
+
+  setTimeout(() => {
+    container.classList.add("step3");
+  }, 700);
+}
+
+const reveal = () => {
+  const box = document.querySelector(".box");
+  box.style.display = "none";
+}
+const revealBtn = () => {
+  const btn = document.querySelector(".button");
+  btn.style.display = "none";
+}
+</script>
+
+</body>
+</html>
